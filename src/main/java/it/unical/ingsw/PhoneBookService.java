@@ -2,12 +2,16 @@ package it.unical.ingsw;
 
 /**
  * Questa classe rappresenta un servizio per la gestione di una rubrica telefonica.
- * Fornisce metodi per verificare la presenza di un contatto, aggiungere un nuovo contatto
- * e rimuovere un contatto esistente.
+ * Implementa l'interfaccia PhoneBookRegistry e fornisce i metodi per verificare la presenza di un contatto,
+ * aggiungere un nuovo contatto e rimuovere un contatto esistente.
  */
-public class PhoneBookService {
+public class PhoneBookService implements PhoneBookRegistry {
     private final PhoneBookRegistry registry;
 
+    /**
+     * Costruttore della classe PhoneBookService.
+     * @param registry l'istanza di PhoneBookRegistry da utilizzare per la gestione della rubrica telefonica
+     */
     public PhoneBookService(PhoneBookRegistry registry) {
         this.registry = registry;
     }
@@ -35,6 +39,7 @@ public class PhoneBookService {
      * Rimuove un contatto esistente dalla rubrica.
      * @param name il nome del contatto da rimuovere
      */
+
     public void removeContact(String name) {
         if(registry.contains(name))
             registry.removeContact(name);
