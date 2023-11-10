@@ -21,6 +21,7 @@ public class PhoneBookService implements PhoneBookRegistry {
      * @param name il nome del contatto da cercare
      * @return true se il contatto è presente, false altrimenti
      */
+    @Override
     public boolean contains(String name) {
         return registry.contains(name);
     }
@@ -30,6 +31,7 @@ public class PhoneBookService implements PhoneBookRegistry {
      * @param name il nome del nuovo contatto
      * @param number il numero di telefono del nuovo contatto
      */
+    @Override
     public void addContact(String name, String number) {
         if(!registry.contains(name))
             registry.addContact(name, number);
@@ -39,7 +41,7 @@ public class PhoneBookService implements PhoneBookRegistry {
      * Rimuove un contatto esistente dalla rubrica.
      * @param name il nome del contatto da rimuovere
      */
-
+    @Override
     public void removeContact(String name) {
         if(registry.contains(name))
             registry.removeContact(name);
